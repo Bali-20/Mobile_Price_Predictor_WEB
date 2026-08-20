@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile Price Predictor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            margin: 0;
+            padding: 0;
+            animation: fadeInBody 1.2s ease-in;
+        }
+
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 80px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, select {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 8px rgba(0,123,255,0.2);
+        }
+
+        button {
+            padding: 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.4s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>📱 Mobile Price Predictor</h2>
+    <form action="/predict" method="post">
+        <label>Brand:</label>
+        <select name="brand" required>
+            <option>samsung</option>
+            <option>vivo</option>
+            <option>oppo</option>
+            <option>redmi</option>
+        </select>
+
+        <label>RAM (GB):</label>
+        <input type="number" name="ram" required>
+
+        <label>Storage (GB):</label>
+        <input type="number" name="storage" required>
+
+        <label>Screen Type:</label>
+        <select name="screen" required>
+            <option>soper amoled</option>
+            <option>amoled</option>
+            <option>lcd</option>
+            <option>ips</option>
+        </select>
+
+        <label>Condition:</label>
+        <select name="condition" required>
+            <option>new</option>
+            <option>good</option>
+            <option>normal</option>
+            <option>bad</option>
+        </select>
+
+        <label>Model Age:</label>
+        <select name="age" required>
+            <option>new</option>
+            <option>old</option>
+        </select>
+
+        <button type="submit">🚀 Predict Price</button>
+    </form>
+</div>
+</body>
+</html>
